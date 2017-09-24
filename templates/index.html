@@ -3,21 +3,8 @@
     <head>
         <title>User Signup</title>
         <style type="text/css">
-            label {
-                display:block;
-                padding:5px;
-            }
-            form {
-                display:table;
-            }
-            input {
-                display:table-cell;
-                float:right;
-                margin-left:5px;
-            }
-            input[type="submit"] {
-                float:left;
-                margin:7px 2px;
+            .error {
+                color:red;
             }
         </style>
     </head>
@@ -26,21 +13,36 @@
         <h1>Signup</h1>
 
         <form method="POST">
-            <label>Username
-                <input type="text" name="username" />
-            </label>
-            <label>Password
-                <input type="password" name="password" />
-            </label>
-            <label>Verify Password
-                <input type="password" name="vpassword" />
-            </label>
-            <label>Email (optional)
-                <input type="text" name="email" />
-            </label>
-            <input type="submit" />
+            <table>
+                <tr>
+                    <td><label for="username">Username</label></td><td>
+                    <input type="text" name="username" />
+                    <span class="error">{{username_err}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td><td>
+                    <input type="password" name="password" />
+                    <span class="error">{{password_err}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="vpassword">Verify Password</label></td><td>
+                    <input type="password" name="vpassword" />
+                    <span class="error">{{vpassword_err}}</span>
+                    </td>
+                </tr>
+                <tr><td>
+                    <label for="email">Email (optional)</label></td><td>
+                    <input type="text" name="email" />
+                    <span class="error">{{email_err}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" /></td>
+                </tr>
+            </table>
         </form>
 
-    
     </body>
 </html>
